@@ -120,8 +120,8 @@ EOF;
     {
         $transportClass = $this->config['mailer']['class'];
         $mailerConfig = $this->config['mailer']['config'];
-        $transporter = new $transportClass();
-        $transporter->setTransportConfig($mailerConfig);
+        $transport = new $transportClass();
+        $transport->setTransportConfig($mailerConfig);
 
         $email = new Email(
             $this->post['to'],
@@ -129,7 +129,7 @@ EOF;
             $this->post['body'],
             $this->post['from']
         );
-        $mailer = new Mailer($email, $transporter);
+        $mailer = new Mailer($email, $transport);
         if ($mailer->send()) {
             return '<p>Email sent!</p>';
         }
