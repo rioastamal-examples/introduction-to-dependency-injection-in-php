@@ -1,0 +1,31 @@
+{
+    "description": "Simple demonstration of Dependency Injection (DI) in PHP",
+    "authors": [
+        {
+            "name": "Rio Astamal",
+            "email": "rio@rioastamal.net",
+            "homepage": "https://rioastamal.net"
+        }
+    ],
+    "support": {
+        "email": "rio@rioastamal.net",
+        "source": "https://github.com/rioastamal/examples/introduction-of-dependency-injection-in-php"
+    },
+    "autoload": {
+        "psr-4": {
+            "RioAstamal\\Examples\\DI\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RioAstamal\\Examples\\DI\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7|^6.0"
+    },
+    "license": "MIT"
+}
