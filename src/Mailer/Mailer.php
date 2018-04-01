@@ -44,10 +44,51 @@ class Mailer
     }
 
     /**
+     * @param MailTransportInterface $transport
+     * @return RioAstamal\Examples\DI\Mailer\Email\Mailer
+     */
+    public function setTransport(MailTransportInterface $transport)
+    {
+        $this->transport = $transport;
+        return $this;
+    }
+
+    /**
+     * @param RioAstamal\Examples\DI\Mailer\Email $email
+     * @return RioAstamal\Examples\DI\Mailer\Email\Mailer
+     */
+    public function setEmail(Email $email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
      * @return boolean
      */
     public function send()
     {
         return $this->transport->send($this->email);
+    }
+
+    /**
+     * Property accessor so consumer can access protected property
+     * directly.
+     *
+     * ```
+     * $mailer = new Mailer($email, $transport);
+     * $mailer->email; // Instance of Email
+     * ```
+     *
+     * @param string $propertyName
+     * @return mixed|null
+     */
+    public function __get($propertyName)
+    {
+        if (property_exists($this, $propertyName)) {
+            return $this->{$propertyName};
+        }
+
+        return null;
     }
 }
