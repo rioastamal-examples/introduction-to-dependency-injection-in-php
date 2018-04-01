@@ -42,12 +42,18 @@ class Application
 
     /**
      * @param array $config
+     * @return void
      */
     public function __construct(array $config = [])
     {
         $this->config = $config + $this->config;
     }
 
+    /**
+     * @param array $server Same as $_SERVER
+     * @param array $post Same as $_POST
+     * @param array $get Same as $_GET
+     */
     public function run($server, $post, $get)
     {
         $this->server = $server;
@@ -71,6 +77,9 @@ class Application
         return $response;
     }
 
+    /**
+     * @return string
+     */
     public function homeController()
     {
         $statusMessage = '';
@@ -81,6 +90,10 @@ class Application
         return $this->homeView($statusMessage);
     }
 
+    /**
+     * @param string $statusMessage
+     * @return string
+     */
     public function homeView($statusMessage='')
     {
         return <<<EOF
@@ -116,6 +129,9 @@ class Application
 EOF;
     }
 
+    /**
+     * @return string
+     */
     protected function sendEmail()
     {
         $transportClass = $this->config['mailer']['class'];
