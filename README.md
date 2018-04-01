@@ -54,10 +54,10 @@ protocol and also SMTP authentication.
 
 ## Read More
 
-My full article about introduction to dependency injection in PHP can be found
+My complete article about introduction to dependency injection in PHP can be found
 on link below. It's in Bahasa Indonesia.
 
-REPLACE_THIS_WITH_ARTICLE_URL
+https://www.linkedin.com/pulse/mengenal-dependency-injection-di-pada-php-rio-astamal/
 
 ## Author
 
