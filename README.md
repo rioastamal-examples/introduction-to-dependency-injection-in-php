@@ -49,7 +49,7 @@ OK (1 test, 5 assertions)
 
 ## Improvement
 
-Please create SmtpMailTransport class to support sending email using SMTP
+You can create SmtpMailTransport class to support sending email using SMTP
 protocol and also SMTP authentication.
 
 ## Read More
