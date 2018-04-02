@@ -11,7 +11,7 @@ Here's how we build Mailer object using DI principle.
 ```php
 $email = new Email($to, $subject, $body, $from);
 $transport = new PhpMailTransport();
-$mailer = new Mailer($emal, $transport);
+$mailer = new Mailer($email, $transport);
 $mailer->send();
 ```
 
